@@ -138,7 +138,7 @@ non_std::string::string(non_std::string &&another) noexcept: m_size(another.m_si
 }
 
 non_std::string::~string() {
-    delete [] m_text;
+    delete[] m_text;
 }
 
 non_std::string &non_std::string::operator=(const non_std::string &another) {
@@ -183,10 +183,22 @@ const char *non_std::string::c_str() const {
 }
 
 void std::getline(std::istream &in, non_std::string &a) {
-    in >> a;
+    std::string input;
+    std::cin.clear();
+    std::getline(in, input);
+
+    a.m_size = input.size();
+    delete a.m_text;
+
+    a.m_text = new char[a.m_size + 1];
+    a.m_text[a.m_size] = '\0';
+
+    for (int i = 0; i < a.m_size; ++i) {
+        a.m_text[i] = input[i];
+    }
 }
 
-void std::swap(non_std::string &a, non_std::string& b) {
+void std::swap(non_std::string &a, non_std::string &b) {
     std::swap(a.m_size, b.m_size);
     std::swap(a.m_text, b.m_text);
 }

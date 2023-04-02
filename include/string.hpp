@@ -47,6 +47,8 @@ namespace non_std {
 
         friend void std::swap(non_std::string &a, non_std::string& b);
 
+        friend void std::getline(std::istream &in, non_std::string &a);
+
         /// constructors
         explicit string();
 

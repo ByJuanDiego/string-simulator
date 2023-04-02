@@ -43,9 +43,10 @@ void test3() {
 
     std::cout << "text 1: ";
     std::getline(std::cin, text_1);
-    std::cout << "text 2: ";
-    std::cin >> text_2;
+    std::cout << "text 1: " << text_1 << std::endl;
 
+    std::cout << "text 2: ";
+    std::getline(std::cin, text_2);
     text_1 = text_2;
 
     std::cout << "text 1: " << text_1 << std::endl;
@@ -53,8 +54,8 @@ void test3() {
 }
 
 int main() {
-    test1();
-    test2();
+//    test1();
+//    test2();
     test3();
     return EXIT_SUCCESS;
 }
