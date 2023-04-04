@@ -68,6 +68,9 @@ namespace non_std {
 
         non_std::string &operator=(std::string &a);
 
+        /// `operator std::string` overloading
+        operator std::string();
+
         /// `const` access member functions
         [[nodiscard]] std::size_t length() const;
 

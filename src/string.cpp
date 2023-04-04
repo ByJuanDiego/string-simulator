@@ -174,6 +174,10 @@ non_std::string &non_std::string::operator=(non_std::string &&another) noexcept 
     return *this;
 }
 
+non_std::string::operator std::string() {
+    return {this->m_text};
+}
+
 std::size_t non_std::string::length() const {
     return this->m_size;
 }
@@ -188,7 +192,7 @@ void std::getline(std::istream &in, non_std::string &a) {
     std::getline(in, input);
 
     a.m_size = input.size();
-    delete a.m_text;
+    delete[] a.m_text;
 
     a.m_text = new char[a.m_size + 1];
     a.m_text[a.m_size] = '\0';

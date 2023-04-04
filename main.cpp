@@ -40,6 +40,7 @@ void test2() {
 void test3() {
     non_std::string text_1;
     std::string text_2;
+    std::string replace = "text_2";
 
     std::cout << "text 1: ";
     std::getline(std::cin, text_1);
@@ -47,7 +48,8 @@ void test3() {
 
     std::cout << "text 2: ";
     std::getline(std::cin, text_2);
-    text_1 = text_2;
+    text_1 = replace;
+    text_2 = text_1;
 
     std::cout << "text 1: " << text_1 << std::endl;
     std::cout << "text 2: " << text_2 << std::endl;
